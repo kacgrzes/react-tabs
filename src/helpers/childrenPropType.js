@@ -25,7 +25,9 @@ module.exports = function childrenPropTypes(props, propName) {
 
         if (c.type === Tab) {
           tabsCount++;
-        }
+        } else if (c.type.displayName === 'Tab') {
+	  tabsCount++;
+	}
       });
     } else if (child.type.displayName === 'TabPanel') {
       panelsCount++;
